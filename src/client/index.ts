@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { $OpenApiTs, RagQueryEvent } from "./types.gen";
+import type { $OpenApiTs } from "./types.gen";
+export type * from "./types.gen";
 
 type HttpMethod = "get" | "post" | "put" | "delete" | "patch";
 type Paths = keyof $OpenApiTs;
@@ -22,7 +23,19 @@ type RequestParams<
   M extends MethodsForPath<P>,
 > = $OpenApiTs[P][M] extends { req: infer R } ? R : never;
 
-type ResponseBody<
+// Get the request body
+export type RequestBody<
+  P extends Paths,
+  M extends MethodsForPath<P>,
+> = $OpenApiTs[P][M] extends {
+  req: {
+    requestBody: infer R;
+  };
+}
+  ? R
+  : never;
+
+export type ResponseBody<
   P extends Paths,
   M extends MethodsForPath<P>,
 > = $OpenApiTs[P][M] extends { res: infer R }
@@ -59,14 +72,13 @@ function isObject(value: unknown): value is Record<string, unknown> {
 }
 
 interface TrieveOpts {
-  apiKey: string;
+  apiKey?: string;
   baseUrl: string;
   debug?: boolean;
 }
 
 export class Trieve {
-  private apiKey: string;
-  private datasetId?: string;
+  private apiKey?: string;
   private baseUrl: string;
   private debug: boolean = false;
 
@@ -90,7 +102,14 @@ export class Trieve {
     params?: EJECT extends false ? RequestParams<P, M> : URQ,
   ): Promise<EJECT extends false ? ResponseBody<P, M> : URE> {
     let requestBody: unknown;
-    const headers: Record<string, string> = {};
+
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+    if (this.apiKey) {
+      headers["Authorization"] = `Bearer ${this.apiKey}`;
+    }
+
     const pathParams: Record<string, string> = {};
 
     if (isObject(params)) {
@@ -125,11 +144,7 @@ export class Trieve {
     const response = await fetch(this.baseUrl + updatedPath, {
       credentials: "include",
       method,
-      headers: {
-        ...headers,
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.apiKey}`,
-      },
+      headers: headers,
       body: requestBody ? JSON.stringify(requestBody) : undefined,
     });
 
@@ -141,40 +156,3 @@ export class Trieve {
     return response.json();
   }
 }
-
-// /// USAGE EXAMPLES ///
-// // Fully typed!!
-//
-// const trieve = new Trieve("admin", "http://localhost:8090");
-//
-// const r0 = await trieve.fetch("/api/file/{file_id}", "delete", {
-//   fileId: "293",
-//   trDataset: "someDatasetId",
-// });
-//
-// const r1 = await trieve.fetch("/api/events", "post", {
-//   requestBody: {
-//     page: 2,
-//   },
-//   trDataset: "someDatasetId",
-// });
-//
-// console.log(r1.events.length);
-//
-// const r2 = await trieve.fetch("/api/analytics/rag", "post", {
-//   requestBody: {
-//     type: "rag_queries",
-//   },
-//   trDataset: "someDatasetId",
-// });
-//
-// // r2's type for thie route is an untagged rust enum, there is no discrimiant, which doesn't play well with typescript
-// // so we can eject the type system completely and specify a return type manually
-// console.log(r2);
-//
-// const r2_ejected = (await trieve.fetch<"eject">("/api/analytics/rag", "post", {
-//   requestBody: {
-//     type: "rag_queries",
-//   },
-//   trDataset: "someDatasetId",
-// })) as RagQueryEvent[];

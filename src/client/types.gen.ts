@@ -580,6 +580,10 @@ export type DatasetConfigurationDTO = {
      */
     MAX_LIMIT?: number | null;
     /**
+     * The maximum number of tokens to use in LLM Response
+     */
+    MAX_TOKENS?: number | null;
+    /**
      * The prompt to use for converting a message to a query
      */
     MESSAGE_TO_QUERY_PROMPT?: string | null;
