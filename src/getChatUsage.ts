@@ -1,7 +1,7 @@
 import { DATASET_ID, formatDateForApi, trieve } from "./trieve";
 
 const result = await trieve.fetch<"eject">("/api/analytics/rag", "post", {
-  requestBody: {
+  data: {
     type: "rag_usage_graph",
     filter: {
       date_range: {
@@ -11,7 +11,7 @@ const result = await trieve.fetch<"eject">("/api/analytics/rag", "post", {
     },
     granularity: "minute",
   },
-  trDataset: DATASET_ID,
+  datasetId: DATASET_ID,
 });
 
 console.log(result);

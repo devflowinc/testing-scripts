@@ -7,7 +7,7 @@ const trieve = new Trieve({
   debug: false,
 });
 
-const DATASET_ID = "c65a2dd7-298e-48e6-ac90-e336ccbbe74f";
+const DATASET_ID = "7ab6502e-ac37-435b-ae36-643c488e282d";
 
 const queries = [
   "How to cook a turkey",
@@ -112,15 +112,15 @@ const queries = [
   "Designing a small kitchen space",
 ];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 100; i++) {
   const results = (await trieve.fetch("/api/chunk/search", "post", {
-    requestBody: {
+    data: {
       // Get random query
-      query: queries[Math.floor(Math.random() * queries.length)],
+      query: queries[i],
       search_type: "fulltext",
     },
     xApiVersion: "V2",
-    trDataset: DATASET_ID,
+    datasetId: DATASET_ID,
   })) as SearchResponseBody;
 
   console.log(results);

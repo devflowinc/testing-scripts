@@ -7,7 +7,7 @@ const trieve = new Trieve({
 });
 
 const org = await trieve.fetch("/api/organization", "post", {
-  requestBody: {
+  data: {
     name: "Test-org",
   },
 });
@@ -17,22 +17,21 @@ const members = await trieve.fetch(
   "get",
   {
     organizationId: org.id,
-    trOrganization: org.id,
   },
 );
 
 console.log(members[0]);
 
-const got_org = await trieve.fetch(
-  "/api/organization/{organization_id}",
-  "get",
-  {
-    organizationId: org.id,
-    trOrganization: org.id,
-  },
-);
+// const got_org = await trieve.fetch(
+//   "/api/organization/{organization_id}",
+//   "get",
+//   {
+//     organizationId: org.id,
+//     trOrganization: org.id,
+//   },
+// );
 
-console.log(got_org);
+// console.log(got_org);
 
 // const test = await trieve.fetch("/api/dataset/{dataset_id}", "get", {
 //   datasetId: "c65a2dd7-298e-48e6-ac90-e336ccbbe74f",

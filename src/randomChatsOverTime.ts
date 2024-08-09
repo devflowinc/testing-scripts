@@ -112,22 +112,22 @@ const queries = [
   "Designing a small kitchen space",
 ];
 const topic = await trieve.fetch("/api/topic", "post", {
-  requestBody: {
+  data: {
     owner_id: "2893",
     name: "test topic",
   },
-  trDataset: DATASET_ID,
+  datasetId: DATASET_ID,
 });
 
 while (true) {
   try {
     const msg = await trieve.fetch("/api/message", "post", {
-      requestBody: {
+      data: {
         topic_id: topic.id,
         new_message_content:
           queries[Math.floor(Math.random() * queries.length)],
       },
-      trDataset: DATASET_ID,
+      datasetId: DATASET_ID,
     });
 
     console.log(msg);

@@ -117,7 +117,7 @@ const SEARCH_TYPES: SearchMethod[] = ["fulltext", "hybrid", "semantic"];
 while (true) {
   try {
     const results = (await trieve.fetch("/api/chunk/search", "post", {
-      requestBody: {
+      data: {
         // Get random query
         query: queries[Math.floor(Math.random() * queries.length)],
         // Random search type
@@ -125,7 +125,7 @@ while (true) {
           SEARCH_TYPES[Math.floor(Math.random() * SEARCH_TYPES.length)],
       },
       xApiVersion: "V2",
-      trDataset: DATASET_ID,
+      datasetId: DATASET_ID,
     })) as SearchResponseBody;
 
     console.log(results);
