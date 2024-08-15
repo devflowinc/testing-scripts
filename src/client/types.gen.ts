@@ -2200,1529 +2200,1133 @@ export type GetCtrAnalyticsData = {
     /**
      * JSON request payload to filter the graph
      */
-    body: CTRAnalytics;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CTRAnalytics;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetCtrAnalyticsResponse = CTRAnalyticsResponse;
-
-export type GetCtrAnalyticsError = ErrorResponseBody;
 
 export type SendCtrDataData = {
     /**
      * JSON request payload to send CTR data
      */
-    body: CTRDataRequestBody;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CTRDataRequestBody;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type SendCtrDataResponse = void;
-
-export type SendCtrDataError = ErrorResponseBody;
 
 export type GetRagAnalyticsData = {
     /**
      * JSON request payload to filter the graph
      */
-    body: RAGAnalytics;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: RAGAnalytics;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetRagAnalyticsResponse = RAGAnalyticsResponse;
-
-export type GetRagAnalyticsError = ErrorResponseBody;
 
 export type GetRecommendationAnalyticsData = {
     /**
      * JSON request payload to filter the graph
      */
-    body: RecommendationAnalytics;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: RecommendationAnalytics;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetRecommendationAnalyticsResponse = RecommendationAnalyticsResponse;
-
-export type GetRecommendationAnalyticsError = ErrorResponseBody;
 
 export type GetSearchAnalyticsData = {
     /**
      * JSON request payload to filter the graph
      */
-    body: SearchAnalytics;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: SearchAnalytics;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetSearchAnalyticsResponse = SearchAnalyticsResponse;
-
-export type GetSearchAnalyticsError = ErrorResponseBody;
 
 export type SetQueryRatingData = {
     /**
      * JSON request payload to rate a query
      */
-    body: RateQueryRequest;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: RateQueryRequest;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type SetQueryRatingResponse = void;
-
-export type SetQueryRatingError = ErrorResponseBody;
 
 export type GetClusterAnalyticsData = {
     /**
      * JSON request payload to filter the graph
      */
-    body: ClusterAnalytics;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: ClusterAnalytics;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetClusterAnalyticsResponse = ClusterAnalyticsResponse;
 
-export type GetClusterAnalyticsError = ErrorResponseBody;
-
 export type LoginData = {
-    query?: {
-        /**
-         * Code sent via email as a result of successful call to send_invitation
-         */
-        inv_code?: string | null;
-        /**
-         * ID of organization to authenticate into
-         */
-        organization_id?: string | null;
-        /**
-         * URL to redirect to after successful login
-         */
-        redirect_uri?: string | null;
-    };
+    /**
+     * Code sent via email as a result of successful call to send_invitation
+     */
+    invCode?: string | null;
+    /**
+     * ID of organization to authenticate into
+     */
+    organizationId?: string | null;
+    /**
+     * URL to redirect to after successful login
+     */
+    redirectUri?: string | null;
 };
 
 export type LogoutResponse = void;
 
-export type LogoutError = unknown;
-
 export type CallbackResponse = SlimUser;
 
-export type CallbackError = ErrorResponseBody;
-
 export type GetMeResponse = SlimUser;
-
-export type GetMeError = ErrorResponseBody;
 
 export type CreateChunkData = {
     /**
      * JSON request payload to create a new chunk (chunk)
      */
-    body: CreateChunkReqPayloadEnum;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CreateChunkReqPayloadEnum;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type CreateChunkResponse = ReturnQueuedChunk;
-
-export type CreateChunkError = ErrorResponseBody;
 
 export type UpdateChunkData = {
     /**
      * JSON request payload to update a chunk (chunk)
      */
-    body: UpdateChunkReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: UpdateChunkReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UpdateChunkResponse = void;
-
-export type UpdateChunkError = ErrorResponseBody;
 
 export type AutocompleteData = {
     /**
      * JSON request payload to semantically search for chunks (chunks)
      */
-    body: AutocompleteReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: AutocompleteReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type AutocompleteResponse = SearchResponseTypes;
-
-export type AutocompleteError = ErrorResponseBody;
 
 export type CountChunksData = {
     /**
      * JSON request payload to count chunks for a search query
      */
-    body: CountChunksReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CountChunksReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type CountChunksResponse = CountChunkQueryResponseBody;
-
-export type CountChunksError = ErrorResponseBody;
 
 export type GenerateOffChunksData = {
     /**
      * JSON request payload to perform RAG on some chunks (chunks)
      */
-    body: GenerateOffChunksReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: GenerateOffChunksReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GenerateOffChunksResponse = string;
-
-export type GenerateOffChunksError = ErrorResponseBody;
 
 export type GetRecommendedChunksData = {
     /**
      * JSON request payload to get recommendations of chunks similar to the chunks in the request
      */
-    body: RecommendChunksRequest;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: RecommendChunksRequest;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetRecommendedChunksResponse = RecommendResponseTypes;
-
-export type GetRecommendedChunksError = ErrorResponseBody;
 
 export type SearchChunksData = {
     /**
      * JSON request payload to semantically search for chunks (chunks)
      */
-    body: SearchChunksReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: SearchChunksReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type SearchChunksResponse = SearchResponseTypes;
-
-export type SearchChunksError = ErrorResponseBody;
 
 export type GetSuggestedQueriesData = {
     /**
      * JSON request payload to get alternative suggested queries
      */
-    body: SuggestedQueriesReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: SuggestedQueriesReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetSuggestedQueriesResponse = SuggestedQueriesResponse;
-
-export type GetSuggestedQueriesError = ErrorResponseBody;
 
 export type UpdateChunkByTrackingIdData2 = {
     /**
      * JSON request payload to update a chunk by tracking_id (chunks)
      */
-    body: UpdateChunkByTrackingIdData;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: UpdateChunkByTrackingIdData;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UpdateChunkByTrackingIdResponse = void;
 
-export type UpdateChunkByTrackingIdError = ErrorResponseBody;
-
 export type GetChunkByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
-    path: {
-        /**
-         * tracking_id of the chunk you want to fetch
-         */
-        tracking_id: string;
-    };
+    /**
+     * tracking_id of the chunk you want to fetch
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunkByTrackingIdResponse = ChunkReturnTypes;
 
-export type GetChunkByTrackingIdError = ErrorResponseBody;
-
 export type DeleteChunkByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * tracking_id of the chunk you want to delete
-         */
-        tracking_id: string;
-    };
+    /**
+     * tracking_id of the chunk you want to delete
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteChunkByTrackingIdResponse = void;
 
-export type DeleteChunkByTrackingIdError = ErrorResponseBody;
-
 export type GetChunkByIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
-    path: {
-        /**
-         * Id of the chunk you want to fetch.
-         */
-        chunk_id: string;
-    };
+    /**
+     * Id of the chunk you want to fetch.
+     */
+    chunkId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunkByIdResponse = ChunkReturnTypes;
 
-export type GetChunkByIdError = ErrorResponseBody;
-
 export type DeleteChunkData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Id of the chunk you want to fetch.
-         */
-        chunk_id: string;
-    };
+    /**
+     * Id of the chunk you want to fetch.
+     */
+    chunkId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteChunkResponse = void;
-
-export type DeleteChunkError = ErrorResponseBody;
 
 export type CreateChunkGroupData = {
     /**
      * JSON request payload to cretea a chunk_group(s)
      */
-    body: CreateChunkGroupReqPayloadEnum;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CreateChunkGroupReqPayloadEnum;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type CreateChunkGroupResponse = CreateChunkGroupResponseEnum;
-
-export type CreateChunkGroupError = ErrorResponseBody;
 
 export type UpdateChunkGroupData = {
     /**
      * JSON request payload to update a chunkGroup
      */
-    body: UpdateChunkGroupReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: UpdateChunkGroupReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UpdateChunkGroupResponse = void;
 
-export type UpdateChunkGroupError = ErrorResponseBody;
-
 export type AddChunkToGroupData = {
+    /**
+     * Id of the group to add the chunk to as a bookmark
+     */
+    groupId: string;
     /**
      * JSON request payload to add a chunk to a group (bookmark it)
      */
-    body: AddChunkToGroupReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Id of the group to add the chunk to as a bookmark
-         */
-        group_id: string;
-    };
+    requestBody: AddChunkToGroupReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type AddChunkToGroupResponse = void;
 
-export type AddChunkToGroupError = ErrorResponseBody;
-
 export type RemoveChunkFromGroupData = {
+    /**
+     * Id of the chunk you want to remove from the group
+     */
+    chunkId?: string | null;
+    /**
+     * Id of the group you want to remove the chunk from.
+     */
+    groupId: string;
     /**
      * JSON request payload to remove a chunk from a group
      */
-    body?: (RemoveChunkFromGroupReqPayload) | null;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Id of the group you want to remove the chunk from.
-         */
-        group_id: string;
-    };
-    query?: {
-        /**
-         * Id of the chunk you want to remove from the group
-         */
-        chunk_id?: string | null;
-    };
+    requestBody?: (RemoveChunkFromGroupReqPayload) | null;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type RemoveChunkFromGroupResponse = void;
-
-export type RemoveChunkFromGroupError = ErrorResponseBody;
 
 export type GetGroupsForChunksData = {
     /**
      * JSON request payload to get the groups that a chunk is in
      */
-    body: GetGroupsForChunksReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: GetGroupsForChunksReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetGroupsForChunksResponse = Array<GroupsForChunk>;
-
-export type GetGroupsForChunksError = ErrorResponseBody;
 
 export type SearchOverGroupsData = {
     /**
      * JSON request payload to semantically search over groups
      */
-    body: SearchOverGroupsReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: SearchOverGroupsReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type SearchOverGroupsResponse = SearchOverGroupsResponseTypes;
-
-export type SearchOverGroupsError = ErrorResponseBody;
 
 export type GetRecommendedGroupsData = {
     /**
      * JSON request payload to get recommendations of chunks similar to the chunks in the request
      */
-    body: RecommendGroupsReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: RecommendGroupsReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetRecommendedGroupsResponse = RecommendGroupsResponse;
-
-export type GetRecommendedGroupsError = ErrorResponseBody;
 
 export type SearchWithinGroupData = {
     /**
      * JSON request payload to semantically search a group
      */
-    body: SearchWithinGroupReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: SearchWithinGroupReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type SearchWithinGroupResponse = SearchGroupResponseTypes;
 
-export type SearchWithinGroupError = ErrorResponseBody;
-
 export type GetChunksInGroupByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The version of the API to use for the request
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
-    path: {
-        /**
-         * The id of the group to get the chunks from
-         */
-        group_tracking_id: string;
-        /**
-         * The page of chunks to get from the group
-         */
-        page: number;
-    };
+    /**
+     * The id of the group to get the chunks from
+     */
+    groupTrackingId: string;
+    /**
+     * The page of chunks to get from the group
+     */
+    page: number;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The version of the API to use for the request
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunksInGroupByTrackingIdResponse = GetChunksInGroupResponse;
 
-export type GetChunksInGroupByTrackingIdError = ErrorResponseBody;
-
 export type GetGroupByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The tracking id of the group to fetch.
-         */
-        tracking_id: string;
-    };
+    /**
+     * The tracking id of the group to fetch.
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetGroupByTrackingIdResponse = ChunkGroupAndFileId;
-
-export type GetGroupByTrackingIdError = ErrorResponseBody;
 
 export type AddChunkToGroupByTrackingIdData = {
     /**
      * JSON request payload to add a chunk to a group via tracking_id
      */
-    body: AddChunkToGroupReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Tracking id of the group to add the chunk to as a bookmark
-         */
-        tracking_id: string;
-    };
+    requestBody: AddChunkToGroupReqPayload;
+    /**
+     * Tracking id of the group to add the chunk to as a bookmark
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type AddChunkToGroupByTrackingIdResponse = void;
-
-export type AddChunkToGroupByTrackingIdError = ErrorResponseBody;
 
 export type UpdateGroupByTrackingIdData = {
     /**
      * JSON request payload to update a chunkGroup
      */
-    body: UpdateGroupByTrackingIDReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Tracking id of the chunk_group to update
-         */
-        tracking_id: string;
-    };
+    requestBody: UpdateGroupByTrackingIDReqPayload;
+    /**
+     * Tracking id of the chunk_group to update
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UpdateGroupByTrackingIdResponse = void;
 
-export type UpdateGroupByTrackingIdError = ErrorResponseBody;
-
 export type DeleteGroupByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Tracking id of the chunk_group to delete
-         */
-        tracking_id: string;
-    };
-    query: {
-        /**
-         * Delete the chunks within the group
-         */
-        delete_chunks: boolean;
-    };
+    /**
+     * Delete the chunks within the group
+     */
+    deleteChunks: boolean;
+    /**
+     * Tracking id of the chunk_group to delete
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteGroupByTrackingIdResponse = void;
 
-export type DeleteGroupByTrackingIdError = ErrorResponseBody;
-
 export type GetChunkGroupData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Id of the group you want to fetch.
-         */
-        group_id: string;
-    };
+    /**
+     * Id of the group you want to fetch.
+     */
+    groupId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetChunkGroupResponse = ChunkGroupAndFileId;
 
-export type GetChunkGroupError = ErrorResponseBody;
-
 export type DeleteChunkGroupData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * Id of the group you want to fetch.
-         */
-        group_id: string;
-    };
-    query: {
-        /**
-         * Delete the chunks within the group
-         */
-        delete_chunks: boolean;
-    };
+    /**
+     * Delete the chunks within the group
+     */
+    deleteChunks: boolean;
+    /**
+     * Id of the group you want to fetch.
+     */
+    groupId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteChunkGroupResponse = void;
 
-export type DeleteChunkGroupError = ErrorResponseBody;
-
 export type GetChunksInGroupData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The version of the API to use for the request
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
-    path: {
-        /**
-         * Id of the group you want to fetch.
-         */
-        group_id: string;
-        /**
-         * The page of chunks to get from the group
-         */
-        page: number | null;
-    };
+    /**
+     * Id of the group you want to fetch.
+     */
+    groupId: string;
+    /**
+     * The page of chunks to get from the group
+     */
+    page: number | null;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The version of the API to use for the request
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunksInGroupResponse2 = GetChunksInGroupResponse;
-
-export type GetChunksInGroupError = ErrorResponseBody;
 
 export type GetChunksByIdsData = {
     /**
      * JSON request payload to get the chunks in the request
      */
-    body: GetChunksData;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: GetChunksData;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunksByIdsResponse = Array<ChunkReturnTypes>;
-
-export type GetChunksByIdsError = ErrorResponseBody;
 
 export type ScrollDatasetChunksData = {
     /**
      * JSON request payload to scroll through chunks (chunks)
      */
-    body: ScrollChunksReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: ScrollChunksReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type ScrollDatasetChunksResponse = ScrollChunksResponseBody;
-
-export type ScrollDatasetChunksError = ErrorResponseBody;
 
 export type GetChunksByTrackingIdsData = {
     /**
      * JSON request payload to get the chunks in the request
      */
-    body: GetTrackingChunksData;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-        /**
-         * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
-         */
-        'X-API-Version'?: (APIVersion) | null;
-    };
+    requestBody: GetTrackingChunksData;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
+    /**
+     * The API version to use for this request. Defaults to V2 for orgs created after July 12, 2024 and V1 otherwise.
+     */
+    xApiVersion?: (APIVersion) | null;
 };
 
 export type GetChunksByTrackingIdsResponse = Array<ChunkReturnTypes>;
-
-export type GetChunksByTrackingIdsError = ErrorResponseBody;
 
 export type CreateDatasetData = {
     /**
      * JSON request payload to create a new dataset
      */
-    body: CreateDatasetRequest;
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
+    requestBody: CreateDatasetRequest;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type CreateDatasetResponse = Dataset;
-
-export type CreateDatasetError = ErrorResponseBody;
 
 export type UpdateDatasetData = {
     /**
      * JSON request payload to update a dataset
      */
-    body: UpdateDatasetRequest;
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
+    requestBody: UpdateDatasetRequest;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type UpdateDatasetResponse = Dataset;
 
-export type UpdateDatasetError = ErrorResponseBody;
-
 export type ClearDatasetData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset you want to clear.
-         */
-        dataset_id: string;
-    };
+    /**
+     * The id of the dataset you want to clear.
+     */
+    datasetId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type ClearDatasetResponse = void;
 
-export type ClearDatasetError = ErrorResponseBody;
-
 export type GetDatasetFilesHandlerData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset to fetch files for.
-         */
-        dataset_id: string;
-        /**
-         * The page number of files you wish to fetch. Each page contains at most 10 files.
-         */
-        page: number;
-    };
+    /**
+     * The id of the dataset to fetch files for.
+     */
+    datasetId: string;
+    /**
+     * The page number of files you wish to fetch. Each page contains at most 10 files.
+     */
+    page: number;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetDatasetFilesHandlerResponse = Array<File>;
-
-export type GetDatasetFilesHandlerError = ErrorResponseBody;
 
 export type GetAllTagsData = {
     /**
      * JSON request payload to get items with the tag in the request
      */
-    body: GetAllTagsReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: GetAllTagsReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetAllTagsResponse2 = GetAllTagsResponse;
 
-export type GetAllTagsError = ErrorResponseBody;
-
 export type GetGroupsForDatasetData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset to fetch groups for.
-         */
-        dataset_id: string;
-        /**
-         * The page of groups to fetch. Page is 1-indexed.
-         */
-        page: number;
-    };
+    /**
+     * The id of the dataset to fetch groups for.
+     */
+    datasetId: string;
+    /**
+     * The page of groups to fetch. Page is 1-indexed.
+     */
+    page: number;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetGroupsForDatasetResponse = GroupData;
 
-export type GetGroupsForDatasetError = ErrorResponseBody;
-
 export type GetDatasetsFromOrganizationData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * id of the organization you want to retrieve datasets for
-         */
-        organization_id: string;
-    };
-    query?: {
-        /**
-         * The number of records to return
-         */
-        limit?: number | null;
-        /**
-         * The number of records to skip
-         */
-        offset?: number | null;
-    };
+    /**
+     * The number of records to return
+     */
+    limit?: number | null;
+    /**
+     * The number of records to skip
+     */
+    offset?: number | null;
+    /**
+     * id of the organization you want to retrieve datasets for
+     */
+    organizationId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type GetDatasetsFromOrganizationResponse = Array<DatasetAndUsage>;
 
-export type GetDatasetsFromOrganizationError = ErrorResponseBody;
-
 export type DeleteDatasetByTrackingIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The tracking id of the dataset you want to delete.
-         */
-        tracking_id: string;
-    };
+    /**
+     * The tracking id of the dataset you want to delete.
+     */
+    trackingId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteDatasetByTrackingIdResponse = void;
 
-export type DeleteDatasetByTrackingIdError = ErrorResponseBody;
-
 export type GetUsageByDatasetIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset you want to retrieve usage for.
-         */
-        dataset_id: string;
-    };
+    /**
+     * The id of the dataset you want to retrieve usage for.
+     */
+    datasetId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetUsageByDatasetIdResponse = DatasetUsageCount;
 
-export type GetUsageByDatasetIdError = ErrorResponseBody;
-
 export type GetDatasetData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset you want to retrieve.
-         */
-        dataset_id: string;
-    };
+    /**
+     * The id of the dataset you want to retrieve.
+     */
+    datasetId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetDatasetResponse = Dataset;
 
-export type GetDatasetError = ErrorResponseBody;
-
 export type DeleteDatasetData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the dataset you want to delete.
-         */
-        dataset_id: string;
-    };
+    /**
+     * The id of the dataset you want to delete.
+     */
+    datasetId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteDatasetResponse = void;
-
-export type DeleteDatasetError = ErrorResponseBody;
 
 export type GetEventsData2 = {
     /**
      * JSON request payload to get events for a dataset
      */
-    body: GetEventsData;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: GetEventsData;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetEventsResponse = EventReturn;
-
-export type GetEventsError = ErrorResponseBody;
 
 export type UploadFileHandlerData = {
     /**
      * JSON request payload to upload a file
      */
-    body: UploadFileReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: UploadFileReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UploadFileHandlerResponse = UploadFileResult;
 
-export type UploadFileHandlerError = ErrorResponseBody;
-
 export type GetFileHandlerData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the file to fetch
-         */
-        file_id: string;
-    };
+    /**
+     * The id of the file to fetch
+     */
+    fileId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetFileHandlerResponse = FileDTO;
 
-export type GetFileHandlerError = ErrorResponseBody;
-
 export type DeleteFileHandlerData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the file to delete
-         */
-        file_id: string;
-    };
+    /**
+     * The id of the file to delete
+     */
+    fileId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteFileHandlerResponse = void;
 
-export type DeleteFileHandlerError = ErrorResponseBody;
-
 export type HealthCheckResponse = unknown;
-
-export type HealthCheckError = ErrorResponseBody;
 
 export type PostInvitationData = {
     /**
      * JSON request payload to send an invitation
      */
-    body: InvitationData;
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
+    requestBody: InvitationData;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type PostInvitationResponse = void;
-
-export type PostInvitationError = ErrorResponseBody;
 
 export type CreateMessageData = {
     /**
      * JSON request payload to create a message completion
      */
-    body: CreateMessageReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CreateMessageReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type CreateMessageResponse = string;
-
-export type CreateMessageError = ErrorResponseBody;
 
 export type EditMessageData = {
     /**
      * JSON request payload to edit a message and get a new stream
      */
-    body: EditMessageReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: EditMessageReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type EditMessageResponse = unknown;
-
-export type EditMessageError = ErrorResponseBody;
 
 export type RegenerateMessageData = {
     /**
      * JSON request payload to delete an agent message then regenerate it in a strem
      */
-    body: RegenerateMessageReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: RegenerateMessageReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type RegenerateMessageResponse = string;
-
-export type RegenerateMessageError = ErrorResponseBody;
 
 export type RegenerateMessagePatchData = {
     /**
      * JSON request payload to delete an agent message then regenerate it in a strem
      */
-    body: RegenerateMessageReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: RegenerateMessageReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type RegenerateMessagePatchResponse = string;
 
-export type RegenerateMessagePatchError = ErrorResponseBody;
-
 export type GetAllTopicMessagesData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The ID of the topic to get messages for.
-         */
-        messages_topic_id: string;
-    };
+    /**
+     * The ID of the topic to get messages for.
+     */
+    messagesTopicId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetAllTopicMessagesResponse = Array<Message>;
-
-export type GetAllTopicMessagesError = ErrorResponseBody;
 
 export type CreateOrganizationData = {
     /**
      * The organization data that you want to create
      */
-    body: CreateOrganizationReqPayload;
+    requestBody: CreateOrganizationReqPayload;
 };
 
 export type CreateOrganizationResponse = Organization;
-
-export type CreateOrganizationError = ErrorResponseBody;
 
 export type UpdateOrganizationData = {
     /**
      * The organization data that you want to update
      */
-    body: UpdateOrganizationReqPayload;
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
+    requestBody: UpdateOrganizationReqPayload;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type UpdateOrganizationResponse = Organization;
-
-export type UpdateOrganizationError = ErrorResponseBody;
 
 export type UpdateAllOrgDatasetConfigsData = {
     /**
      * The organization data that you want to create
      */
-    body: UpdateAllOrgDatasetConfigsReqPayload;
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
+    requestBody: UpdateAllOrgDatasetConfigsReqPayload;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type UpdateAllOrgDatasetConfigsResponse = void;
 
-export type UpdateAllOrgDatasetConfigsError = ErrorResponseBody;
-
 export type GetOrganizationUsageData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * The id of the organization you want to fetch the usage of.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization you want to fetch the usage of.
+     */
+    organizationId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type GetOrganizationUsageResponse = OrganizationUsageCount;
 
-export type GetOrganizationUsageError = ErrorResponseBody;
-
 export type GetOrganizationUsersData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * The id of the organization you want to fetch the users of.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization you want to fetch the users of.
+     */
+    organizationId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type GetOrganizationUsersResponse = Array<SlimUser>;
 
-export type GetOrganizationUsersError = ErrorResponseBody;
-
 export type GetOrganizationData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * The id of the organization you want to fetch.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization you want to fetch.
+     */
+    organizationId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type GetOrganizationResponse = Organization;
 
-export type GetOrganizationError = ErrorResponseBody;
-
 export type DeleteOrganizationData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * The id of the organization you want to fetch.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization you want to fetch.
+     */
+    organizationId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type DeleteOrganizationResponse = void;
 
-export type DeleteOrganizationError = ErrorResponseBody;
-
 export type CreateSetupCheckoutSessionData = {
-    path: {
-        /**
-         * The id of the organization to create setup checkout session for.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization to create setup checkout session for.
+     */
+    organizationId: string;
 };
 
 export type CreateSetupCheckoutSessionResponse = CreateSetupCheckoutSessionResPayload;
 
-export type CreateSetupCheckoutSessionError = ErrorResponseBody;
-
 export type GetAllInvoicesData = {
-    path: {
-        /**
-         * The id of the organization to get invoices for.
-         */
-        organization_id: string;
-    };
+    /**
+     * The id of the organization to get invoices for.
+     */
+    organizationId: string;
 };
 
 export type GetAllInvoicesResponse = Array<StripeInvoice>;
 
-export type GetAllInvoicesError = ErrorResponseBody;
-
 export type DirectToPaymentLinkData = {
-    path: {
-        /**
-         * id of the organization you want to subscribe to the plan
-         */
-        organization_id: string;
-        /**
-         * id of the plan you want to subscribe to
-         */
-        plan_id: string;
-    };
+    /**
+     * id of the organization you want to subscribe to the plan
+     */
+    organizationId: string;
+    /**
+     * id of the plan you want to subscribe to
+     */
+    planId: string;
 };
 
 export type GetAllPlansResponse = Array<StripePlan>;
 
-export type GetAllPlansError = ErrorResponseBody;
-
 export type CancelSubscriptionData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * id of the subscription you want to cancel
-         */
-        subscription_id: string;
-    };
+    /**
+     * id of the subscription you want to cancel
+     */
+    subscriptionId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type CancelSubscriptionResponse = unknown;
 
-export type CancelSubscriptionError = ErrorResponseBody;
-
 export type UpdateSubscriptionPlanData = {
-    headers: {
-        /**
-         * The organization id to use for the request
-         */
-        'TR-Organization': string;
-    };
-    path: {
-        /**
-         * id of the plan you want to subscribe to
-         */
-        plan_id: string;
-        /**
-         * id of the subscription you want to update
-         */
-        subscription_id: string;
-    };
+    /**
+     * id of the plan you want to subscribe to
+     */
+    planId: string;
+    /**
+     * id of the subscription you want to update
+     */
+    subscriptionId: string;
+    /**
+     * The organization id to use for the request
+     */
+    trOrganization: string;
 };
 
 export type UpdateSubscriptionPlanResponse = unknown;
-
-export type UpdateSubscriptionPlanError = ErrorResponseBody;
 
 export type CreateTopicData = {
     /**
      * JSON request payload to create chat topic
      */
-    body: CreateTopicReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: CreateTopicReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type CreateTopicResponse = Topic;
-
-export type CreateTopicError = ErrorResponseBody;
 
 export type UpdateTopicData = {
     /**
      * JSON request payload to update a chat topic
      */
-    body: UpdateTopicReqPayload;
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
+    requestBody: UpdateTopicReqPayload;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type UpdateTopicResponse = void;
 
-export type UpdateTopicError = ErrorResponseBody;
-
 export type GetAllTopicsForOwnerIdData = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The owner_id to get topics of; A common approach is to use a browser fingerprint or your user's id
-         */
-        owner_id: string;
-    };
+    /**
+     * The owner_id to get topics of; A common approach is to use a browser fingerprint or your user's id
+     */
+    ownerId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type GetAllTopicsForOwnerIdResponse = Array<Topic>;
 
-export type GetAllTopicsForOwnerIdError = ErrorResponseBody;
-
 export type DeleteTopicData2 = {
-    headers: {
-        /**
-         * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
-         */
-        'TR-Dataset': string;
-    };
-    path: {
-        /**
-         * The id of the topic you want to delete.
-         */
-        topic_id: string;
-    };
+    /**
+     * The id of the topic you want to delete.
+     */
+    topicId: string;
+    /**
+     * The dataset id or tracking_id to use for the request. We assume you intend to use an id if the value is a valid uuid.
+     */
+    trDataset: string;
 };
 
 export type DeleteTopicResponse = void;
-
-export type DeleteTopicError = ErrorResponseBody;
 
 export type UpdateUserData = {
     /**
      * JSON request payload to update user information for the auth'ed user
      */
-    body: UpdateUserOrgRoleData;
+    requestBody: UpdateUserOrgRoleData;
 };
 
 export type UpdateUserResponse = void;
-
-export type UpdateUserError = ErrorResponseBody;
 
 export type SetUserApiKeyData = {
     /**
      * JSON request payload to create a new user api key
      */
-    body: SetUserApiKeyRequest;
+    requestBody: SetUserApiKeyRequest;
 };
 
 export type SetUserApiKeyResponse2 = SetUserApiKeyResponse;
 
-export type SetUserApiKeyError = ErrorResponseBody;
-
 export type DeleteUserApiKeyData = {
-    path: {
-        /**
-         * The id of the api key to delete
-         */
-        api_key_id: string;
-    };
+    /**
+     * The id of the api key to delete
+     */
+    apiKeyId: string;
 };
 
 export type DeleteUserApiKeyResponse = void;
 
-export type DeleteUserApiKeyError = ErrorResponseBody;
-
 export type GetMetricsResponse = string;
-
-export type GetMetricsError = ErrorResponseBody;
 
 export type $OpenApiTs = {
     '/api/analytics/ctr': {
@@ -3732,11 +3336,11 @@ export type $OpenApiTs = {
                 /**
                  * The CTR analytics for the dataset
                  */
-                '200': CTRAnalyticsResponse;
+                200: CTRAnalyticsResponse;
                 /**
                  * Service error relating to getting CTR analytics
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -3745,11 +3349,11 @@ export type $OpenApiTs = {
                 /**
                  * The CTR data was successfully sent
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to sending CTR data
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3760,11 +3364,11 @@ export type $OpenApiTs = {
                 /**
                  * The RAG analytics for the dataset
                  */
-                '200': RAGAnalyticsResponse;
+                200: RAGAnalyticsResponse;
                 /**
                  * Service error relating to getting RAG analytics
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3775,11 +3379,11 @@ export type $OpenApiTs = {
                 /**
                  * The recommendation analytics for the dataset
                  */
-                '200': RecommendationAnalyticsResponse;
+                200: RecommendationAnalyticsResponse;
                 /**
                  * Service error relating to getting recommendation analytics
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3790,11 +3394,11 @@ export type $OpenApiTs = {
                 /**
                  * The search analytics for the dataset
                  */
-                '200': SearchAnalyticsResponse;
+                200: SearchAnalyticsResponse;
                 /**
                  * Service error relating to getting search analytics
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -3803,11 +3407,11 @@ export type $OpenApiTs = {
                 /**
                  * The query was successfully rated
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to rating a query
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3818,11 +3422,11 @@ export type $OpenApiTs = {
                 /**
                  * The cluster analytics for the dataset
                  */
-                '200': ClusterAnalyticsResponse;
+                200: ClusterAnalyticsResponse;
                 /**
                  * Service error relating to getting cluster analytics
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3833,11 +3437,11 @@ export type $OpenApiTs = {
                 /**
                  * Response that redirects to OAuth provider through a Location header to be handled by browser.
                  */
-                '303': unknown;
+                303: unknown;
                 /**
                  * OAuth error likely with OIDC provider.
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         delete: {
@@ -3845,7 +3449,7 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that your current auth token has been invalidated. This does not invalidate your API key.
                  */
-                '204': void;
+                204: void;
             };
         };
     };
@@ -3855,11 +3459,11 @@ export type $OpenApiTs = {
                 /**
                  * Response that returns with set-cookie header
                  */
-                '200': SlimUser;
+                200: SlimUser;
                 /**
                  * Email or password empty or incorrect
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3869,11 +3473,11 @@ export type $OpenApiTs = {
                 /**
                  * The user corresponding to your current auth credentials
                  */
-                '200': SlimUser;
+                200: SlimUser;
                 /**
                  * Error message indicitating you are not currently signed in
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3884,19 +3488,19 @@ export type $OpenApiTs = {
                 /**
                  * JSON response payload containing the created chunk
                  */
-                '200': ReturnQueuedChunk;
+                200: ReturnQueuedChunk;
                 /**
                  * Error typically due to deserialization issues
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Error when more than 120 chunks are provided in bulk
                  */
-                '413': ErrorResponseBody;
+                413: ErrorResponseBody;
                 /**
                  * Error when upgrade is needed to process more chunks
                  */
-                '426': ErrorResponseBody;
+                426: ErrorResponseBody;
             };
         };
         put: {
@@ -3905,11 +3509,11 @@ export type $OpenApiTs = {
                 /**
                  * No content Ok response indicating the chunk was updated as requested
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to to updating chunk, likely due to conflicting tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3920,11 +3524,11 @@ export type $OpenApiTs = {
                 /**
                  * Chunks with embedding vectors which are similar to those in the request body
                  */
-                '200': SearchResponseTypes;
+                200: SearchResponseTypes;
                 /**
                  * Service error relating to searching
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3935,11 +3539,11 @@ export type $OpenApiTs = {
                 /**
                  * Number of chunks satisfying the query
                  */
-                '200': CountChunkQueryResponseBody;
+                200: CountChunkQueryResponseBody;
                 /**
                  * Failed to count chunks
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -3950,11 +3554,11 @@ export type $OpenApiTs = {
                 /**
                  * This will be a JSON response of a string containing the LLM's generated inference. Response if not streaming.
                  */
-                '200': string;
+                200: string;
                 /**
                  * Service error relating to to updating chunk, likely due to conflicting tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3965,11 +3569,11 @@ export type $OpenApiTs = {
                 /**
                  * Chunks with embedding vectors which are similar to positives and dissimilar to negatives
                  */
-                '200': RecommendResponseTypes;
+                200: RecommendResponseTypes;
                 /**
                  * Service error relating to to getting similar chunks
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3980,11 +3584,11 @@ export type $OpenApiTs = {
                 /**
                  * Chunks with embedding vectors which are similar to those in the request body
                  */
-                '200': SearchResponseTypes;
+                200: SearchResponseTypes;
                 /**
                  * Service error relating to searching
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -3995,11 +3599,11 @@ export type $OpenApiTs = {
                 /**
                  * A JSON object containing a list of alternative suggested queries
                  */
-                '200': SuggestedQueriesResponse;
+                200: SuggestedQueriesResponse;
                 /**
                  * Service error relating to to updating chunk, likely due to conflicting tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4010,11 +3614,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk has been updated as per your request
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to to updating chunk
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4025,15 +3629,15 @@ export type $OpenApiTs = {
                 /**
                  * chunk with the tracking_id that you were searching for
                  */
-                '200': ChunkReturnTypes;
+                200: ChunkReturnTypes;
                 /**
                  * Service error relating to fidning a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Chunk not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4042,11 +3646,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk with the tracking_id specified was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to finding a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4057,15 +3661,15 @@ export type $OpenApiTs = {
                 /**
                  * chunk with the id that you were searching for
                  */
-                '200': ChunkReturnTypes;
+                200: ChunkReturnTypes;
                 /**
                  * Service error relating to fidning a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Chunk not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4074,11 +3678,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk with the id specified was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to finding a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4089,15 +3693,15 @@ export type $OpenApiTs = {
                 /**
                  * Returns the created chunk_group if a single chunk_group was specified or an array of all chunk_groups which were created
                  */
-                '200': CreateChunkGroupResponseEnum;
+                200: CreateChunkGroupResponseEnum;
                 /**
                  * Service error relating to creating the chunk_group(s)
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Service error indicating more 1000 chunk groups are trying to be created at once
                  */
-                '413': ErrorResponseBody;
+                413: ErrorResponseBody;
             };
         };
         put: {
@@ -4106,11 +3710,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunkGroup was updated
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to updating the chunkGroup
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4121,11 +3725,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk was added to the group (bookmark'ed).
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to getting the groups that the chunk is in.
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         delete: {
@@ -4134,11 +3738,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk was removed to the group
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to removing the chunk from the group
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4149,11 +3753,11 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the groups that the chunk is in
                  */
-                '200': Array<GroupsForChunk>;
+                200: Array<GroupsForChunk>;
                 /**
                  * Service error relating to getting the groups that the chunk is in
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4164,11 +3768,11 @@ export type $OpenApiTs = {
                 /**
                  * Group chunks which are similar to the embedding vector of the search query
                  */
-                '200': SearchOverGroupsResponseTypes;
+                200: SearchOverGroupsResponseTypes;
                 /**
                  * Service error relating to searching over groups
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4179,11 +3783,11 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the groups which are similar to the positive groups and dissimilar to the negative ones
                  */
-                '200': RecommendGroupsResponse;
+                200: RecommendGroupsResponse;
                 /**
                  * Service error relating to to getting similar chunks
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4194,11 +3798,11 @@ export type $OpenApiTs = {
                 /**
                  * Group chunks which are similar to the embedding vector of the search query
                  */
-                '200': SearchGroupResponseTypes;
+                200: SearchGroupResponseTypes;
                 /**
                  * Service error relating to getting the groups that the chunk is in
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4209,15 +3813,15 @@ export type $OpenApiTs = {
                 /**
                  * Chunks present within the specified group
                  */
-                '200': GetChunksInGroupResponse;
+                200: GetChunksInGroupResponse;
                 /**
                  * Service error relating to getting the groups that the chunk is in
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Group not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4228,15 +3832,15 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the group with the given tracking id
                  */
-                '200': ChunkGroupAndFileId;
+                200: ChunkGroupAndFileId;
                 /**
                  * Service error relating to getting the group with the given tracking id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Group not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         post: {
@@ -4245,11 +3849,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunk was added to the group
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error related to adding the chunk group by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -4258,11 +3862,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunkGroup was updated
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to updating the chunkGroup
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         delete: {
@@ -4271,11 +3875,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunkGroup was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the chunkGroup
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4286,15 +3890,15 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the group with the given tracking id
                  */
-                '200': ChunkGroupAndFileId;
+                200: ChunkGroupAndFileId;
                 /**
                  * Service error relating to getting the group with the given tracking id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Group not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4303,11 +3907,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the chunkGroup was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the chunkGroup
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4318,15 +3922,15 @@ export type $OpenApiTs = {
                 /**
                  * Chunks present within the specified group
                  */
-                '200': GetChunksInGroupResponse;
+                200: GetChunksInGroupResponse;
                 /**
                  * Service error relating to getting the groups that the chunk is in
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Group not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4337,15 +3941,15 @@ export type $OpenApiTs = {
                 /**
                  * chunks with the id that you were searching for
                  */
-                '200': Array<ChunkReturnTypes>;
+                200: Array<ChunkReturnTypes>;
                 /**
                  * Service error relating to fidning a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Any one of the specified chunks not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4356,11 +3960,11 @@ export type $OpenApiTs = {
                 /**
                  * Number of chunks equivalent to page_size starting from offset_chunk_id
                  */
-                '200': ScrollChunksResponseBody;
+                200: ScrollChunksResponseBody;
                 /**
                  * Service error relating to scrolling chunks
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4371,11 +3975,11 @@ export type $OpenApiTs = {
                 /**
                  * Chunks with one the ids which were specified
                  */
-                '200': Array<ChunkReturnTypes>;
+                200: Array<ChunkReturnTypes>;
                 /**
                  * Service error relating to finding a chunk by tracking_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4386,11 +3990,11 @@ export type $OpenApiTs = {
                 /**
                  * Dataset created successfully
                  */
-                '200': Dataset;
+                200: Dataset;
                 /**
                  * Service error relating to creating the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -4399,15 +4003,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset updated successfully
                  */
-                '200': Dataset;
+                200: Dataset;
                 /**
                  * Service error relating to updating the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4418,15 +4022,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset cleared successfully
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4437,11 +4041,11 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the files in the current dataset
                  */
-                '200': Array<File>;
+                200: Array<File>;
                 /**
                  * Service error relating to getting the files in the current datase
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4452,11 +4056,11 @@ export type $OpenApiTs = {
                 /**
                  * Page of tags requested with all tags and the number of chunks in the dataset with that tag plus the total number of unique tags for the whole datset
                  */
-                '200': GetAllTagsResponse;
+                200: GetAllTagsResponse;
                 /**
                  * Service error relating to finding items by tag
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4467,11 +4071,11 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the groups created by the given dataset
                  */
-                '200': GroupData;
+                200: GroupData;
                 /**
                  * Service error relating to getting the groups created by the given dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4482,15 +4086,15 @@ export type $OpenApiTs = {
                 /**
                  * Datasets retrieved successfully
                  */
-                '200': Array<DatasetAndUsage>;
+                200: Array<DatasetAndUsage>;
                 /**
                  * Service error relating to retrieving the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Could not find organization
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4501,15 +4105,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset deleted successfully
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4520,15 +4124,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset usage retrieved successfully
                  */
-                '200': DatasetUsageCount;
+                200: DatasetUsageCount;
                 /**
                  * Service error relating to retrieving the dataset usage
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4539,15 +4143,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset retrieved successfully
                  */
-                '200': Dataset;
+                200: Dataset;
                 /**
                  * Service error relating to retrieving the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4556,15 +4160,15 @@ export type $OpenApiTs = {
                 /**
                  * Dataset deleted successfully
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Dataset not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
     };
@@ -4575,11 +4179,11 @@ export type $OpenApiTs = {
                 /**
                  * Events for the dataset
                  */
-                '200': EventReturn;
+                200: EventReturn;
                 /**
                  * Service error relating to getting events for the dataset
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4590,11 +4194,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the file is uploading
                  */
-                '200': UploadFileResult;
+                200: UploadFileResult;
                 /**
                  * Service error relating to uploading the file
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4605,15 +4209,15 @@ export type $OpenApiTs = {
                 /**
                  * The signed s3 url corresponding to the file_id requested
                  */
-                '200': FileDTO;
+                200: FileDTO;
                 /**
                  * Service error relating to finding the file
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * File not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4622,11 +4226,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the file has been deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to finding or deleting the file
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4636,11 +4240,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the service is healthy and can make embedding vectors
                  */
-                '200': unknown;
+                200: unknown;
                 /**
                  * Service error relating to making an embedding or overall service health
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4651,11 +4255,11 @@ export type $OpenApiTs = {
                 /**
                  * Ok response. Indicates that invitation email was sent correctly.
                  */
-                '204': void;
+                204: void;
                 /**
                  * Invalid email or some other error
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4666,11 +4270,11 @@ export type $OpenApiTs = {
                 /**
                  * This will be a JSON response of a string containing the LLM's generated inference. Response if not streaming.
                  */
-                '200': string;
+                200: string;
                 /**
                  * Service error relating to getting a chat completion
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -4679,11 +4283,11 @@ export type $OpenApiTs = {
                 /**
                  * This will be a HTTP stream, check the chat or search UI for an example how to process this
                  */
-                '200': unknown;
+                200: unknown;
                 /**
                  * Service error relating to getting a chat completion
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         delete: {
@@ -4692,11 +4296,11 @@ export type $OpenApiTs = {
                 /**
                  * This will be a JSON response of a string containing the LLM's generated inference. Response if not streaming.
                  */
-                '200': string;
+                200: string;
                 /**
                  * Service error relating to getting a chat completion
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         patch: {
@@ -4705,11 +4309,11 @@ export type $OpenApiTs = {
                 /**
                  * This will be a JSON response of a string containing the LLM's generated inference. Response if not streaming.
                  */
-                '200': string;
+                200: string;
                 /**
                  * Service error relating to getting a chat completion
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4720,11 +4324,11 @@ export type $OpenApiTs = {
                 /**
                  * All messages relating to the topic with the given ID
                  */
-                '200': Array<Message>;
+                200: Array<Message>;
                 /**
                  * Service error relating to getting the messages
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4735,11 +4339,11 @@ export type $OpenApiTs = {
                 /**
                  * Created organization object
                  */
-                '200': Organization;
+                200: Organization;
                 /**
                  * Service error relating to creating the organization
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -4748,11 +4352,11 @@ export type $OpenApiTs = {
                 /**
                  * Updated organization object
                  */
-                '200': Organization;
+                200: Organization;
                 /**
                  * Service error relating to updating the organization
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4763,11 +4367,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the dataset ServerConfigurations were updated successfully
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to updating the dataset ServerConfigurations
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4778,11 +4382,11 @@ export type $OpenApiTs = {
                 /**
                  * The current usage of the specified organization
                  */
-                '200': OrganizationUsageCount;
+                200: OrganizationUsageCount;
                 /**
                  * Service error relating to finding the organization's usage by id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4793,11 +4397,11 @@ export type $OpenApiTs = {
                 /**
                  * Array of users who belong to the specified by organization
                  */
-                '200': Array<SlimUser>;
+                200: Array<SlimUser>;
                 /**
                  * Service error relating to finding the organization's users by id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4808,15 +4412,15 @@ export type $OpenApiTs = {
                 /**
                  * Organization with the id that was requested
                  */
-                '200': Organization;
+                200: Organization;
                 /**
                  * Service error relating to finding the organization by id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
                 /**
                  * Organization not found
                  */
-                '404': ErrorResponseBody;
+                404: ErrorResponseBody;
             };
         };
         delete: {
@@ -4825,11 +4429,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the organization was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to deleting the organization by id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4840,11 +4444,11 @@ export type $OpenApiTs = {
                 /**
                  * Checkout session (setup) response
                  */
-                '200': CreateSetupCheckoutSessionResPayload;
+                200: CreateSetupCheckoutSessionResPayload;
                 /**
                  * Service error relating to creating setup checkout session
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4855,11 +4459,11 @@ export type $OpenApiTs = {
                 /**
                  * List of all invoices
                  */
-                '200': Array<StripeInvoice>;
+                200: Array<StripeInvoice>;
                 /**
                  * Service error relating to getting all invoices
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4870,11 +4474,11 @@ export type $OpenApiTs = {
                 /**
                  * SeeOther response redirecting user to stripe checkout page
                  */
-                '303': unknown;
+                303: unknown;
                 /**
                  * Service error relating to creating a URL for a stripe checkout page
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4884,11 +4488,11 @@ export type $OpenApiTs = {
                 /**
                  * List of all plans
                  */
-                '200': Array<StripePlan>;
+                200: Array<StripePlan>;
                 /**
                  * Service error relating to getting all plans
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4899,11 +4503,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the subscription was cancelled
                  */
-                '200': unknown;
+                200: unknown;
                 /**
                  * Service error relating to creating a URL for a stripe checkout page
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4914,11 +4518,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the subscription was updated to the new plan
                  */
-                '200': unknown;
+                200: unknown;
                 /**
                  * Service error relating to updating the subscription to the new plan
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4929,11 +4533,11 @@ export type $OpenApiTs = {
                 /**
                  * The JSON response payload containing the created topic
                  */
-                '200': Topic;
+                200: Topic;
                 /**
                  * Topic name empty or a service error
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
         put: {
@@ -4942,11 +4546,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the topic was updated
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to topic update
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4957,11 +4561,11 @@ export type $OpenApiTs = {
                 /**
                  * All topics belonging to a given owner_id
                  */
-                '200': Array<Topic>;
+                200: Array<Topic>;
                 /**
                  * Service error relating to getting topics for the owner_id
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4972,11 +4576,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the topic was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to topic deletion
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -4987,11 +4591,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the user's role was updated
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to updating the user
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -5002,11 +4606,11 @@ export type $OpenApiTs = {
                 /**
                  * JSON body representing the api_key for the user
                  */
-                '200': SetUserApiKeyResponse;
+                200: SetUserApiKeyResponse;
                 /**
                  * Service error relating to creating api_key for the user
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -5017,11 +4621,11 @@ export type $OpenApiTs = {
                 /**
                  * Confirmation that the api key was deleted
                  */
-                '204': void;
+                204: void;
                 /**
                  * Service error relating to creating api_key for the user
                  */
-                '400': ErrorResponseBody;
+                400: ErrorResponseBody;
             };
         };
     };
@@ -5031,11 +4635,11 @@ export type $OpenApiTs = {
                 /**
                  * Prometheus metrics for the server
                  */
-                '200': string;
+                200: string;
                 /**
                  * Internal Server Error
                  */
-                '500': ErrorResponseBody;
+                500: ErrorResponseBody;
             };
         };
     };
