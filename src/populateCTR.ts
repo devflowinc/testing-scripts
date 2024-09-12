@@ -1,16 +1,8 @@
-import { Trieve } from "./client/index";
 import type {
   CTRSearchQueryWithClicksResponse,
   SearchResponseBody,
 } from "./client/types.gen";
-
-const trieve = new Trieve({
-  apiKey: "admin",
-  baseUrl: "http://localhost:8090",
-  debug: false,
-});
-
-const DATASET_ID = "c65a2dd7-298e-48e6-ac90-e336ccbbe74f";
+import { DATASET_ID, trieve } from "./trieve";
 
 for (let i = 0; i < 20; i++) {
   const results = (await trieve.fetch("/api/chunk/search", "post", {
@@ -33,7 +25,7 @@ for (let i = 0; i < 20; i++) {
     datasetId: DATASET_ID,
   })) as SearchResponseBody;
 
-  console.log(results);
+  console.log(results.chunks[Math.min(i, results.chunks.length - 1)].chunk.id);
 
   // Click on a result
   const response = await trieve.fetch("/api/analytics/ctr", "put", {

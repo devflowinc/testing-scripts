@@ -1,13 +1,6 @@
 import { Trieve } from "./client/index";
 import type { SearchResponseBody } from "./client/types.gen";
-
-const trieve = new Trieve({
-  apiKey: "admin",
-  baseUrl: "http://localhost:8090",
-  debug: false,
-});
-
-const DATASET_ID = "7ab6502e-ac37-435b-ae36-643c488e282d";
+import { DATASET_ID, trieve } from "./trieve";
 
 const queries = [
   "How to cook a turkey",
