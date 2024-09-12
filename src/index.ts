@@ -1,10 +1,4 @@
-import { Trieve } from "./client/index";
-
-const trieve = new Trieve({
-  apiKey: "admin",
-  baseUrl: "http://localhost:8090",
-  debug: false,
-});
+import { trieve } from "./trieve";
 
 const org = await trieve.fetch("/api/organization", "post", {
   data: {
@@ -17,7 +11,7 @@ const members = await trieve.fetch(
   "get",
   {
     organizationId: org.id,
-  },
+  }
 );
 
 console.log(members[0]);
